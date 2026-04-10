@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 
 <body>
@@ -14,29 +14,26 @@
     <div class="content">
         <button id="add-btn">+ Add New Book</button>
         <dialog id="add-dialog">
-            <h2>Add book to your library</h2>
-            <form action="" method="dialog">
-                <div class="title_form">
-                    <label for="title_input">Title:</label>
-                    <input type="text" name="title" id="title_input">
+            <h2>Add Book To Your Library</h2>
+            <form action="" method="dialog" class="add-form">
+                <div class="title-form">
+                    <input type="text" name="title" id="title_input" required placeholder="Title">
                 </div>
-                <div class="author_form">
-                    <label for="author_input">Author:</label>
-                    <input type="text" name="author" id="author_input">
+                <div class="author-form">
+                    <input type="text" name="author" id="author_input" required placeholder="Author">
                 </div>
-                <div class="pages_form">
-                    <label for="pages_input">Pages: </label>
-                    <input type="number" name="pages" id="pages_input">
+                <div class="pages-form">
+                    <input type="number" name="pages" id="pages_input" required placeholder="Pages">
                 </div>
-                <div class="read_form">
-                    <label for="read_input">Read:</label>
+                <div class="read-form">
+                    <label for="read_input">I already read this:</label>
                     <input type="checkbox" name="Read" id="read_input">
                 </div>
-                
+
             </form>
             <div class="dialog-buttons">
-                <button id="close-dialog">Close</button>
-                <button id="save-book">Save</button>
+                <button class="close-dialog">Close</button>
+                <button class="save-book">Save</button>
             </div>
         </dialog>
         <div class="card-container">

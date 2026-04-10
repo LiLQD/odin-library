@@ -28,8 +28,8 @@ function Print() {
 }
 
 const openButton = document.querySelector("#add-btn");
-const closeButton = document.querySelector("#close-dialog");
-// const saveButton = document.querySelector("#save-book")
+const closeButton = document.querySelector(".close-dialog");
+// const saveButton = document.querySelector(".save-book")
 
 const addBookDialog = document.querySelector('#add-dialog');
 
