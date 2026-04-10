@@ -1,29 +1,198 @@
-*{
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
-.heading{
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.heading {
     height: 5rem;
     background-color: #ebedf5;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.content{
+
+.content {
     display: grid;
-    justify-content: center;
+    justify-items: center;
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: 10% 1fr;
 }
-.addBookBtn{
+
+#add-btn {
+    grid-column: 2;
     margin-top: 2rem;
-    appearance: none;
     height: 3rem;
     width: 15rem;
+
+    appearance: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+
     background-color: #0f5ac7;
     color: white;
+
     border-radius: 5px;
     border: solid black 1px;
     cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: bold;
+}
+
+#add-dialog {
+    border: solid wheat 1px;
+    border-radius: 10px;
+    width: 20%;
+    height: 30%;
+}
+
+#add-dialog[open] {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card-container {
+    grid-row: 2;
+    grid-column: 2;
+    margin: 2rem;
+    display: grid;
+    justify-content: center;
+    width: 80vw;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+
+}
+
+.card {
+    display: grid;
+
+
+    border: solid 1px black;
+    gap: 10px;
 }

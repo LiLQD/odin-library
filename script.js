@@ -7,8 +7,7 @@ function Book(id, title, author, pages, read) {
 	this.pages = pages;
 	this.read = read;
 	this.info = function () {
-		if (read === false)
-			console.log(`${this.id} ${this.name} by ${this.author}, ${this.pages} pages, not read yet`);
+		console.log(`${this.id} ${this.title} by ${this.author}, ${this.pages} pages, not read yet`);
 	}
 }
 
@@ -20,10 +19,23 @@ function addBookToLibrary() {
 	let read = prompt("Read ? (True or false)");
 	const newBook = new Book(id, title, author, pages, read);
 	myLibrary.push(newBook);
+	console.log(newBook.info());
 }
 function Print() {
-	for (let i = 0; i < n; i++) {
+	for (let i = 0; i < myLibrary.length; i++) {
 		myLibrary[i].info();
 	}
 }
 
+const openButton = document.querySelector("#add-btn");
+const closeButton = document.querySelector("#close-dialog");
+// const saveButton = document.querySelector("#save-book")
+
+const addBookDialog = document.querySelector('#add-dialog');
+
+openButton.addEventListener('click', () => {
+	addBookDialog.showModal();
+})
+closeButton.addEventListener("click", () => {
+	addBookDialog.close()
+})
