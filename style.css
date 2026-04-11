@@ -169,7 +169,7 @@ body {
 }
 
 #add-dialog {
-    border: solid gray 1px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     width: 25%;
     height: 40%;
@@ -183,14 +183,18 @@ body {
     gap: 1rem;
     font-size: 1.5rem;
 }
-.title-form > input,
-.author-form > input,
-.pages-form > input{
+
+.title-form>input,
+.author-form>input,
+.pages-form>input {
     appearance: none;
     box-shadow: inset 1px 1px 3px #cccccc;
     height: 1.5rem;
     width: 15rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
 }
+
 .dialog-buttons {
     display: flex;
     gap: 3rem;
@@ -208,7 +212,8 @@ body {
     font-size: 1rem;
     /* thêm để dễ thấy */
 
-    border: solid black 1px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
 
 }
 
@@ -243,9 +248,50 @@ body {
 }
 
 .card {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-
-    border: solid 1px black;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     gap: 10px;
+}
+hr{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.title {
+    margin-top: 1rem;
+}
+
+.card > *:not(hr):not(.card-buttons) {
+    margin-left: 10px;
+
+}
+
+.card-buttons {
+
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    
+    gap: 2rem;
+    width: 100%;
+}
+
+.card-buttons>* {
+    width: 40%;
+    height: 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    overflow: hidden;
+    appearance: none;
+    cursor: pointer;
+}
+.green-button{
+    color: white;
+    background-color: #3FA836;
 }
