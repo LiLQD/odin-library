@@ -26,6 +26,14 @@ function addCardToPage() {
 	cardContainer.appendChild(card)
 }
 
+function deletedBook() {
+	console.log(this);
+	this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+	// deleteButton.forEach(item => {
+	// 	item.id === this.
+	// });
+}
+
 const cardContainer = document.querySelector(".card-container");
 
 
@@ -36,9 +44,7 @@ const deleteButton = document.querySelectorAll(".remove");
 const addBookDialog = document.querySelector('#add-dialog');
 
 deleteButton.forEach(button => {
-	button.addEventListener('click', () => {
-		this.parentNode.parentNode.parentNode.removeChild(this.parentNode);
-	})
+	button.addEventListener('click', deletedBook);
 });
 
 saveButton.addEventListener('click', addCardToPage());
