@@ -26,6 +26,20 @@ function addCardToPage() {
 	cardContainer.appendChild(card)
 }
 
+function displayBook(){
+	cardContainer.innerHTML = ""
+	myLibrary.forEach(book => {
+		const card = document.createElement("div")
+		card.dataset.id = book.id;
+		card.classList.add("card")
+		cardContainer.appendChild(card);
+
+		const title = document.createElement("p");
+		const bookTitle = book.title;
+		title.classList.add("title")
+		card.appendChild()
+	});
+}
 function deletedBook() {
 	console.log(this);
 	this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
