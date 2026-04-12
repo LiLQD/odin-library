@@ -21,13 +21,12 @@ function addBookToLibrary() {
 	myLibrary.push(newBook);
 	console.log(newBook.info());
 }
-function addCardToPage() {
-	const card = document.createElement("div");
-	cardContainer.appendChild(card)
+function addBook() {
+	
 }
 
-function displayBook(){
-	cardContainer.innerHTML = ""
+function displayBook() {
+	cardContainer.replaceChildren();
 	myLibrary.forEach(book => {
 		const card = document.createElement("div")
 		card.dataset.id = book.id;
@@ -35,17 +34,61 @@ function displayBook(){
 		cardContainer.appendChild(card);
 
 		const title = document.createElement("p");
-		const bookTitle = book.title;
-		title.classList.add("title")
-		card.appendChild()
+		title.classList.add("title");
+		title.textContent = book.title;
+		card.appendChild(title);
+
+		const underLine = document.createElement("hr");
+		card.appendChild(underLine);
+
+		const author = document.createElement("p");
+		author.classList.add("author");
+		author.textContent = "Author: " + book.author;
+		card.appendChild(author);
+
+		const pages = document.createElement("p");
+		pages.classList.add("pages");
+		pages.textContent = "Pages: " + book.pages;
+		card.appendChild(pages);
+
+		const read = document.createElement("p");
+		read.classList.add("read");
+		if (book.read === true) {
+			var status = "Yes";
+		}
+		else {
+			var status = "Not yet"
+		}
+		read.textContent = "Read: " + status;
+		card.appendChild(read);
+
+		card.appendChild(underLine);
+
+		const cardButton = document.createElement("div");
+		cardButton.classList.add("card-buttons");
+		card.appendChild(cardButton);
+		
+		const removeButton = document.createElement("button");
+		removeButton.classList.add("remove");
+		removeButton.textContent = "Remove";
+		removeButton.addEventListener('click', deletedBook);
+		cardButton.appendChild(removeButton);
+
+		const readButton = document.createElement("button");
+		readButton.classList.add("read-check");
+		readButton.textContent("Mark as Read");
+		readButton.addEventListener('click', markAsRead);
+		cardButton.appendChild(readButton);
 	});
 }
 function deletedBook() {
-	console.log(this);
+	console.log($`In deletedBook function{this}`);
 	this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
-	// deleteButton.forEach(item => {
-	// 	item.id === this.
-	// });
+
+}
+function markAsRead(){
+	console.log($`In markAsRead function{this}`);
+	
 }
 
 const cardContainer = document.querySelector(".card-container");

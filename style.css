@@ -86,6 +86,7 @@ video {
     font: inherit;
     vertical-align: baseline;
 }
+
 article,
 aside,
 details,
@@ -99,17 +100,21 @@ nav,
 section {
     display: block;
 }
+
 body {
     line-height: 1;
 }
+
 ol,
 ul {
     list-style: none;
 }
+
 blockquote,
 q {
     quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -117,6 +122,7 @@ q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -139,7 +145,7 @@ body {
 .content {
     display: grid;
     justify-items: center;
-    
+
     grid-template-columns: 10% 1fr 10%;
     grid-template-rows: 10% 1fr;
 }
@@ -250,14 +256,18 @@ body {
     border-radius: 8px;
     gap: 10px;
 }
-hr{
-    border: 1px solid rgba(0, 0, 0, 0.1);
+
+hr {
+    width: 80%;
+    justify-self: center;
+    opacity: 50%;
 }
+
 .title {
     margin-top: 1rem;
 }
 
-.card > *:not(hr):not(.card-buttons) {
+.card>*:not(hr):not(.card-buttons) {
     margin-left: 10px;
 
 }
@@ -267,7 +277,7 @@ hr{
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
-    
+
     gap: 2rem;
     width: 100%;
 }
@@ -277,7 +287,7 @@ hr{
     height: 2rem;
     font-weight: 700;
     font-size: 1rem;
-    
+
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 
@@ -285,7 +295,8 @@ hr{
     appearance: none;
     cursor: pointer;
 }
-.green-button{
+
+.green-button {
     color: white;
     background-color: #3FA836;
 }
