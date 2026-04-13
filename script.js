@@ -54,9 +54,11 @@ function displayBook() {
 		read.classList.add("read");
 		if (book.read === true) {
 			var status = "Yes";
+			const readBtn = "green-button"
 		}
 		else {
 			var status = "Not yet"
+			const readBtn = "yellow-button"
 		}
 		read.textContent = "Read: " + status;
 		card.appendChild(read);
@@ -75,19 +77,22 @@ function displayBook() {
 		cardButton.appendChild(removeButton);
 
 		const readButton = document.createElement("button");
-		readButton.classList.add("read-check", "green-button");
+		readButton.classList.add("read-check", readBtn);
 		readButton.textContent = "Mark as Read";
 		readButton.addEventListener('click', markAsRead);
 		cardButton.appendChild(readButton);
 	});
 }
 function deletedBook() {
-	console.log($`In deletedBook function{this}`);
+	console.log(`In deletedBook function ${this}`);
 	this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
-
+	let cardId = this.parentNode.parentNode.getAttribute("data-id");
+	myLibrary.splice(myLibrary.findIndex(book => book.id === cardId), 1);
+	displayBook()
 }
+
 function markAsRead() {
-	console.log($`In markAsRead function{this}`);
+	console.log(`In markAsRead function ${this}`);
 
 }
 
