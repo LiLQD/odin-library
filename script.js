@@ -95,23 +95,8 @@ function markAsRead() {
 	console.log(`In markAsRead function ${this}`);
 	let cardId = this.parentNode.parentNode.getAttribute("data-id");
 	const book = myLibrary[myLibrary.findIndex(book => book.id === cardId)];
-	// console.log(book);
 	book.read = !book.read;
-	if (book.read === true) {
-		var status = "Yes";
-		var readBtn = "green-button"
-	}
-	else {
-		var status = "Not yet"
-		var readBtn = "yellow-button"
-	}
-	const cardButton = this.parentNode;
-	const readButton = document.createElement("button");
-	readButton.classList.add("read-check", readBtn);
-	readButton.textContent = "Mark as Read";
-	readButton.addEventListener('click', markAsRead);
-	cardButton.removeChild(this);
-	cardButton.appendChild(readButton);
+	displayBook();
 }
 
 const cardContainer = document.querySelector(".card-container");
