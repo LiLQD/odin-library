@@ -61,7 +61,8 @@ function displayBook() {
 		read.textContent = "Read: " + status;
 		card.appendChild(read);
 
-		card.appendChild(underLine);
+		const underLine2 = underLine.cloneNode(true);
+		card.appendChild(underLine2);
 
 		const cardButton = document.createElement("div");
 		cardButton.classList.add("card-buttons");
