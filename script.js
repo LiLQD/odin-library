@@ -11,18 +11,17 @@ function Book(id, title, author, pages, read) {
 	}
 }
 
-function addBookToLibrary() {
-	let id = crypto.randomUUID();
-	let title = prompt("Title");
-	let author = prompt("Author");
-	let pages = prompt("Pages:");
-	let read = prompt("Read ? (True or false)");
-	const newBook = new Book(id, title, author, pages, read);
-	myLibrary.push(newBook);
-	console.log(newBook.info());
-}
 function addBook() {
-	
+	let id = crypto.randomUUID();
+	const titleInput = document.getElementById("title_input").value;
+	const authorInput = document.getElementById("author_input").value;
+	const pagesInput = document.getElementById("pages_input").value;
+	const readInput = document.getElementById("read_input").checked;
+
+	const newBook = new Book(id, titleInput, authorInput, pagesInput, readInput);
+	myLibrary.push(newBook);
+	newBook.info();
+	displayBook();
 }
 
 function displayBook() {
@@ -67,7 +66,7 @@ function displayBook() {
 		const cardButton = document.createElement("div");
 		cardButton.classList.add("card-buttons");
 		card.appendChild(cardButton);
-		
+
 		const removeButton = document.createElement("button");
 		removeButton.classList.add("remove");
 		removeButton.textContent = "Remove";
@@ -75,8 +74,8 @@ function displayBook() {
 		cardButton.appendChild(removeButton);
 
 		const readButton = document.createElement("button");
-		readButton.classList.add("read-check");
-		readButton.textContent("Mark as Read");
+		readButton.classList.add("read-check", "green-button");
+		readButton.textContent = "Mark as Read";
 		readButton.addEventListener('click', markAsRead);
 		cardButton.appendChild(readButton);
 	});
@@ -86,9 +85,9 @@ function deletedBook() {
 	this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
 
 }
-function markAsRead(){
+function markAsRead() {
 	console.log($`In markAsRead function{this}`);
-	
+
 }
 
 const cardContainer = document.querySelector(".card-container");
@@ -104,7 +103,7 @@ deleteButton.forEach(button => {
 	button.addEventListener('click', deletedBook);
 });
 
-saveButton.addEventListener('click', addCardToPage());
+saveButton.addEventListener('click', addBook);
 openButton.addEventListener('click', () => {
 	addBookDialog.showModal();
 })
