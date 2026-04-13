@@ -265,6 +265,8 @@ hr {
 
 .title {
     margin-top: 1rem;
+    font-weight: 900;
+    font-size: 1.2rem;
 }
 
 .card>*:not(hr):not(.card-buttons) {
